@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Cases - NexGenFireSafety</title>
+  <meta name="description" content="Explore NexGenFireSafety deployments across Server Rooms, Data Centers, Offices, BTS rooms, Labs, and Smart Homes (UPS & Battery rooms).">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --primary-slate:#2C3E50; --primary-copper:#B7472A; --primary-sage:#8FBC8F; --secondary-gray:#95A5A6; --accent-amber:#E67E22; --cream-white:#FDFEFE; }
+    body { font-family:'Inter',sans-serif; background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); background-attachment: fixed; }
+    .glass-effect { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,0.2); }
+    /* Navigation Bar Styling */
+    nav.glass-effect { background:#FFFFFF !important; backdrop-filter:none; border:none; box-shadow:0 2px 8px rgba(0,0,0,.1); }
+    nav.glass-effect a { color:#2C3E50 !important; }
+    nav.glass-effect a:hover { color:#B7472A !important; }
+    nav.glass-effect .text-gradient { color:#B7472A; }
+    .text-gradient { background: linear-gradient(135deg,var(--primary-copper),var(--accent-amber)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .btn-primary { background: linear-gradient(135deg,var(--primary-copper),var(--accent-amber)); transition: all .3s ease; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow:0 10px 25px rgba(183,71,42,.3); }
+    /* Mobile Menu Styles */
+    .mobile-menu-btn { display:none; flex-direction:column; cursor:pointer; gap:6px; }
+    .mobile-menu-btn span { width:25px; height:3px; background-color:#2C3E50; border-radius:3px; transition: all .3s ease; }
+    .mobile-menu-btn.active span:nth-child(1){ transform: rotate(45deg) translate(10px,10px); }
+    .mobile-menu-btn.active span:nth-child(2){ opacity:0; }
+    .mobile-menu-btn.active span:nth-child(3){ transform: rotate(-45deg) translate(7px,-7px); }
+    .mobile-menu { display:none; position:absolute; top:64px; left:0; right:0; background:#FFFFFF; backdrop-filter:none; border-top:1px solid #e5e7eb; flex-direction:column; padding:20px; gap:10px; z-index:40; }
+    .mobile-menu.active { display:flex; }
+    .mobile-menu a { color:#2C3E50; padding:12px 16px; text-decoration:none; border-radius:6px; transition: all .3s ease; }
+    .mobile-menu a:hover { background-color:#f3f4f6; color:#B7472A; }
+    .mobile-menu .btn-primary { width:100%; text-align:center; padding:12px 16px; border-radius:6px; margin-top:10px; }
+    @media (max-width:768px){ .mobile-menu-btn{display:flex;} .nav-desktop{display:none;} }
+  </style>
+</head>
+<body class="text-gray-800">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 glass-effect">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold"><span class="text-gradient">NexGen</span>FireSafety</a>
+        </div>
+        <div class="nav-desktop hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="index.html" class="px-3 py-2 text-sm font-medium transition-colors">Home</a>
+            <a href="product.html" class="px-3 py-2 text-sm font-medium transition-colors">Product</a>
+            <a href="investors.html" class="px-3 py-2 text-sm font-medium transition-colors">Investors</a>
+            <a href="team.html" class="px-3 py-2 text-sm font-medium transition-colors">Team</a>
+            <a href="use-cases.html" class="px-3 py-2 text-sm font-medium">Use Cases</a>
+            <a href="investors.html#contact" class="btn-primary text-white px-6 py-2 rounded-lg text-sm font-medium">Contact</a>
+          </div>
+        </div>
+        <button class="mobile-menu-btn md:hidden" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="px-3 py-2 text-sm font-medium transition-colors">Home</a>
+        <a href="product.html" class="px-3 py-2 text-sm font-medium transition-colors">Product</a>
+        <a href="investors.html" class="px-3 py-2 text-sm font-medium transition-colors">Investors</a>
+        <a href="team.html" class="px-3 py-2 text-sm font-medium transition-colors">Team</a>
+        <a href="use-cases.html" class="px-3 py-2 text-sm font-medium">Use Cases</a>
+        <a href="investors.html#contact" class="btn-primary text-white px-6 py-2 rounded-lg text-sm font-medium text-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-10 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">Deployment <span class="text-gradient">Use Cases</span></h1>
+      <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">Tailored AI detection and targeted suppression for diverse environments—optimized safety, minimal collateral impact, and rapid response.</p>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section class="bg-white/95 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div role="tablist" aria-label="Use Case Categories" class="glass-effect rounded-xl p-2 flex flex-wrap gap-2">
+        <button class="usecase-tab px-4 py-2 rounded-lg text-sm md:text-base btn-primary text-white" data-target="server-room" role="tab" aria-controls="server-room" aria-selected="true">Server Room</button>
+        <button class="usecase-tab px-4 py-2 rounded-lg text-sm md:text-base glass-effect text-white" data-target="data-center" role="tab" aria-controls="data-center">Data Center Room</button>
+        <button class="usecase-tab px-4 py-2 rounded-lg text-sm md:text-base glass-effect text-white" data-target="offices" role="tab" aria-controls="offices">Offices</button>
+        <button class="usecase-tab px-4 py-2 rounded-lg text-sm md:text-base glass-effect text-white" data-target="bts-room" role="tab" aria-controls="bts-room">BTS Room</button>
+        <button class="usecase-tab px-4 py-2 rounded-lg text-sm md:text-base glass-effect text-white" data-target="labs" role="tab" aria-controls="labs">Labs</button>
+        <button class="usecase-tab px-4 py-2 rounded-lg text-sm md:text-base glass-effect text-white" data-target="smart-homes" role="tab" aria-controls="smart-homes">Smart Homes (UPS & Battery)</button>
+      </div>
+
+      <!-- Panels -->
+      <div class="mt-8 space-y-10">
+        <!-- Server Room -->
+        <div id="server-room" class="usecase-panel">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-effect rounded-xl p-6">
+              <h2 class="text-2xl font-bold mb-3">Risk Profile</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>High heat density; cable trays and racks increase spread potential.</li>
+                <li>Electrical short-circuits; PSU failures; battery backup hotspots.</li>
+                <li>Airflow patterns can accelerate flame propagation.</li>
+              </ul>
+              <h3 class="text-xl font-semibold mt-6 mb-2">Recommended Coverage</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>Ceiling AI camera units with rack-focused detection zones.</li>
+                <li>Localized clean-agent suppression nozzles per rack segment.</li>
+                <li>IoT smoke/thermal sensors for redundancy and early alerts.</li>
+              </ul>
+            </div>
+            <div class="glass-effect rounded-xl p-6">
+              <h3 class="text-xl font-semibold mb-3">Outcomes</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">90%</div><div class="text-sm">Faster Response</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">< 3s</div><div class="text-sm">Detection-to-Action</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Minimal</div><div class="text-sm">Collateral Damage</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Realtime</div><div class="text-sm">Alerts & Audit</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Center Room -->
+        <div id="data-center" class="usecase-panel hidden">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-effect rounded-xl p-6">
+              <h2 class="text-2xl font-bold mb-3">Risk Profile</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>Extensive cabling; hot aisles; high current draw across PDUs.</li>
+                <li>Potential for cascading outages and costly downtime.</li>
+                <li>Compliance-heavy environment (NFPA/EN, insurer requirements).</li>
+              </ul>
+              <h3 class="text-xl font-semibold mt-6 mb-2">Recommended Coverage</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>AI camera arrays per aisle; auto-targeted micro-suppression.</li>
+                <li>Agent containment to impacted rack bays to avoid wetting.</li>
+                <li>Integration with BMS/DCIM for automated incident workflows.</li>
+              </ul>
+            </div>
+            <div class="glass-effect rounded-xl p-6">
+              <h3 class="text-xl font-semibold mb-3">KPIs</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">$300k+</div><div class="text-sm">Avg/hr Downtime Saved</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Aisle</div><div class="text-sm">Granular Targeting</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">99.7%</div><div class="text-sm">Detection Accuracy</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Audit</div><div class="text-sm">Event Recording</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offices -->
+        <div id="offices" class="usecase-panel hidden">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-effect rounded-xl p-6">
+              <h2 class="text-2xl font-bold mb-3">Risk Profile</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>Distributed loads (printers, kettles, HVAC). Human factors.</li>
+                <li>Furniture and partitions increase smoke spread complexity.</li>
+                <li>Evacuation pathways must remain clear and visible.</li>
+              </ul>
+              <h3 class="text-xl font-semibold mt-6 mb-2">Recommended Coverage</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>AI nodes at corridors and utility clusters; signage tie-in.</li>
+                <li>Localized agent for pantry/electrical cabinets to avoid spills.</li>
+                <li>IoT alerts to facility team with muster guidance.</li>
+              </ul>
+            </div>
+            <div class="glass-effect rounded-xl p-6">
+              <h3 class="text-xl font-semibold mb-3">Benefits</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Targeted</div><div class="text-sm">Pantry Suppression</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Guided</div><div class="text-sm">Evacuation Flow</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Less</div><div class="text-sm">Cleanup Required</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">IoT</div><div class="text-sm">Facilities Alerts</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BTS Room -->
+        <div id="bts-room" class="usecase-panel hidden">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-effect rounded-xl p-6">
+              <h2 class="text-2xl font-bold mb-3">Risk Profile</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>Rectifiers and RF equipment; battery banks; confined spaces.</li>
+                <li>Outdoor shelters; fluctuating ambient conditions.</li>
+                <li>Service continuity critical for network uptime.</li>
+              </ul>
+              <h3 class="text-xl font-semibold mt-6 mb-2">Recommended Coverage</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>Compact AI unit with ruggedized housing; thermal assist.</li>
+                <li>Clean-agent suppression avoiding corrosive residues.</li>
+                <li>Remote telemetry to NOC for auto-ticketing.</li>
+              </ul>
+            </div>
+            <div class="glass-effect rounded-xl p-6">
+              <h3 class="text-xl font-semibold mb-3">Benefits</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Uptime</div><div class="text-sm">Protected Continuity</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Clean</div><div class="text-sm">Non-corrosive Agent</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Remote</div><div class="text-sm">Telemetry & Control</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Rugged</div><div class="text-sm">Outdoor Tolerance</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Labs -->
+        <div id="labs" class="usecase-panel hidden">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-effect rounded-xl p-6">
+              <h2 class="text-2xl font-bold mb-3">Risk Profile</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>Chemical/electrical apparatus; variable hazards per bench.</li>
+                <li>Fume hoods and ventilation complexities.</li>
+                <li>Strict protocols and audit requirements.</li>
+              </ul>
+              <h3 class="text-xl font-semibold mt-6 mb-2">Recommended Coverage</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>Bench-level micro-suppression with camera detection.</li>
+                <li>Agent selection matched to material classes.</li>
+                <li>Event logging + video for compliance audits.</li>
+              </ul>
+            </div>
+            <div class="glass-effect rounded-xl p-6">
+              <h3 class="text-xl font-semibold mb-3">Benefits</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Bench</div><div class="text-sm">Granular Control</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Proof</div><div class="text-sm">Audit Trail</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Safe</div><div class="text-sm">Agent Matching</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Fume</div><div class="text-sm">Ventilation-aware</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smart Homes (UPS & Battery Rooms) -->
+        <div id="smart-homes" class="usecase-panel hidden">
+          <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="glass-effect rounded-xl p-6">
+              <h2 class="text-2xl font-bold mb-3">Risk Profile</h2>
+              <ul class="space-y-2 text-gray-700">
+                <li>UPS cabinets and Li-ion battery rooms; thermal runaway risk.</li>
+                <li>Proximity to living spaces; safety and cleanup paramount.</li>
+                <li>Smaller enclosures; need for quick, contained suppression.</li>
+              </ul>
+              <h3 class="text-xl font-semibold mt-6 mb-2">Recommended Coverage</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>Compact AI camera + thermal sensors in UPS/battery rooms.</li>
+                <li>Clean agent tailored to electrical/battery incidents.</li>
+                <li>Consumer app alerts with guided steps and emergency calls.</li>
+              </ul>
+            </div>
+            <div class="glass-effect rounded-xl p-6">
+              <h3 class="text-xl font-semibold mb-3">Benefits</h3>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Safe</div><div class="text-sm">For Living Areas</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Rapid</div><div class="text-sm">Contained Action</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">App</div><div class="text-sm">User Guidance</div></div>
+                <div class="bg-white rounded-lg p-4 shadow"><div class="text-3xl font-bold text-gradient mb-1">Clean</div><div class="text-sm">Minimal Residue</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-12 text-center">
+        <a href="investors.html#contact" class="btn-primary text-white px-8 py-4 rounded-lg text-lg font-semibold inline-flex items-center justify-center">Discuss Your Environment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-4" id="faqList">
+        <details class="bg-white rounded-xl p-4 shadow">
+          <summary class="cursor-pointer font-semibold">Which suppression agents are used?</summary>
+          <p class="mt-2 text-gray-700">Clean agents suitable for electronics and battery environments, chosen to minimize residue and collateral impact while meeting local codes.</p>
+        </details>
+        <details class="bg-white rounded-xl p-4 shadow">
+          <summary class="cursor-pointer font-semibold">Can it integrate with existing BMS/DCIM?</summary>
+          <p class="mt-2 text-gray-700">Yes. We support alarm forwarding, telemetry, and automated workflows via standard protocols and APIs.</p>
+        </details>
+        <details class="bg-white rounded-xl p-4 shadow">
+          <summary class="cursor-pointer font-semibold">Is the system scalable from homes to hyperscale?</summary>
+          <p class="mt-2 text-gray-700">Absolutely. Configurations scale from single-room deployments to multi-aisle data centers with modular units.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
